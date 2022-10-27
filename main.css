@@ -1,0 +1,117 @@
+:root {
+  --nbc: rgb(155, 155, 155);
+  --bg: white;
+  --text: black;
+}
+
+
+
+body {
+  padding: 0px;
+  margin: 0px;
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  transition-duration: 0.2s;
+}
+
+.nav {
+  padding: 0.5%;
+  margin: 0px;
+  background: var(--nbc);
+  text-align: left;
+  transform: translateY(-70%);
+}
+
+.navb {
+  transition-duration: 0.2s;
+  padding: 1%;
+  text-align: left;
+  text-decoration: none;
+  display: inline;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  font-size: 150%;
+}
+
+.navb:hover {
+  text-shadow: rgb(218, 218, 218) 0px 0px 10px;
+  transition-duration: 0.2s;
+}
+
+.navb:active {
+  text-shadow: white 0px 0px 10px;
+  transition-duration: 0s;
+}
+
+li {
+  list-style: none;
+}
+
+.text {
+  color: var(--text);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1%;
+  margin: 1%;
+  font-size: 120%;
+}
+
+.mnav {
+  text-align: right;
+  padding: 0.5%;
+  margin: 0px;
+  background: var(--nbc);
+  z-index: 1;
+}
+
+.dmm {
+  padding: 5px;
+  margin: 0px;
+  border: none;
+  background-color: var(--nbc);
+  transition-duration: 0.3s;
+  z-index: 3;
+}
+
+.dmm:active {
+  transition-duration: 0s;
+  background-color: rgb(112, 112, 112);
+}
+
+.mobilenav {
+  padding: 5px;
+  margin: 0px;
+  border: none;
+  background-color: var(--nbc);
+  transform: translateY(-100%);
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+
+.mobilenav:active {
+  transition-duration: 0s;
+  background-color: rgb(112, 112, 112);
+}
+
+@media (max-width: 625px) {
+  .navb {
+    transform: translateY(-800%);
+    transition-duration: 0s;
+    display: block;
+    background-color: var(--nbc);
+    color: white;
+    padding: 3%;
+    font-size: 120%;
+    z-index: -2;
+  }
+  .nav {
+    transform: translateY(-25px);
+    transform: translateX(-45px);
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0px;
+    margin: 0px;
+    z-index: -2;
+  }
+  .mobilenav {
+    transform: translateY(0px);
+  }
+}

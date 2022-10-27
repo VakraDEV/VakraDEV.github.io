@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Vakky Studios | Home" />
+    <meta property="og:image" content="icon" />
+    <meta property="og:description" content="input description here"/>
+    <title>Vakky Studios | Home</title>
+    <link rel="icon" href="icon">
+    <link rel="stylesheet" href="main.css"
+  </head>
+  <body>
+    <div class="mnav" id="button">
+      <button class="mobilenav" onclick="mobilenavopen()"><img height="32" width="32" src="Images/mbn.png"></button>
+    </div>
+    <div class="nav" id="nav">
+      <ul id="navlist">
+        <a class="navb" id="navb" href="#"><b>HOME</b></a>
+        <a class="navb" id="navb" href="#"><b>ABOUT</b></a>
+        <a class="navb" id="navb" href="#"><b>EXPERIENCE</b></a>
+        <a class="navb" id="navb" href="#"><b>CREATIONS</b></a>
+        <a class="navb" id="navb" href="#"><b>CONTACT</b></a>
+        <a class="navb" id="dmm"><button class="dmm" id="dm" onclick="dme()"><img height="32" width="32" src="Images/darkmode.png"></button></a>
+      </ul>
+    </div>
+    <p id="text" class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, unde amet impedit commodi eveniet maxime animi. Mollitia doloribus quae, vitae voluptatem distinctio rerum enim earum obcaecati quos corporis vel dolorem!</p>
+    <br />
+    <br />
+    <p id="text" class="text">Placeholder text, hello there, how are you?<br />bread is nice</p>
+    <br />
+  </body>
+  <script>
+    var navopen = false;
+    function mobilenavopen() {
+      const button = document.getElementById("button")
+      button.innerHTML = '<button class="mobilenav" onclick="mobilenavclose()"><img height="32" width="32" src="Images/mbn.png"></button>';
+      const ul = document.getElementById("navlist");
+      const li = ul.getElementsByTagName("a");
+      for (A = 0; A < 6; A++) {
+        li[A].style.visibility = "visible";
+        li[A].style.transitionDuration = "0.2s";
+        li[A].style.transform = "translateY(-18px)";
+      }
+      const nav = document.getElementById("nav");
+      nav.style.visibility = "visible";
+    }
+    function mobilenavclose() {
+      const button = document.getElementById("button")
+      button.innerHTML = '<button class="mobilenav" onclick="mobilenavopen()"><img height="32" width="32" src="Images/mbn.png"></button>';
+      const ul = document.getElementById("navlist");
+      const li = ul.getElementsByTagName("a");
+      for (A = 0; A < 6; A++) {
+        li[A].style.visibility = "visible";
+        li[A].style.transitionDuration = "0.2s";
+        li[A].style.transform = "translateY(-800%)";
+      }
+      const nav = document.getElementById("nav");
+      nav.style.visibility = "visible";
+    }
+
+    function dme() {
+      var root = document.querySelector(":root")
+      root.style.setProperty('--nbc', 'rgb(53, 53, 53)')
+      root.style.setProperty('--bg', 'rgb(15, 15, 15)')
+      root.style.setProperty('--text', 'white')
+      const dm = document.getElementById('dmm')
+      dm.innerHTML = '<button class="dmm" id="dm" onclick="dmd()"><img height="32" width="32" src="Images/darkmode.png"></button>'
+    }
+    function dmd() {
+      var root = document.querySelector(":root")
+      root.style.setProperty('--nbc', 'rgb(155, 155, 155)')
+      root.style.setProperty('--bg', 'white')
+      root.style.setProperty('--text', 'black')
+      const dm = document.getElementById('dmm')
+      dm.innerHTML = '<button class="dmm" id="dm" onclick="dme()"><img height="32" width="32" src="Images/darkmode.png"></button>'
+    }
+  </script>
+</html>
