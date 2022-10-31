@@ -1,7 +1,8 @@
 :root {
-  --nbc: rgb(155, 155, 155);
+  --nbc: linear-gradient(red, rgb(200, 0, 0));
   --bg: white;
   --text: black;
+  --active: rgb(113, 170, 255); 
 }
 
 
@@ -11,10 +12,10 @@ body {
   margin: 0px;
   scroll-behavior: smooth;
   background-color: var(--bg);
-  transition-duration: 0.2s;
 }
 
 .nav {
+  position: relative;
   padding: 0.5%;
   margin: 0px;
   background: var(--nbc);
@@ -74,7 +75,7 @@ li {
 
 .dmm:active {
   transition-duration: 0s;
-  background-color: rgb(112, 112, 112);
+  background-color: var(--active);
 }
 
 .mobilenav {
@@ -89,29 +90,62 @@ li {
 
 .mobilenav:active {
   transition-duration: 0s;
-  background-color: rgb(112, 112, 112);
+  background-color: var(--active);
 }
 
-@media (max-width: 625px) {
+h1 {
+  color: var(--text);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1%;
+  margin: 1%;
+  font-size: 250%;
+}
+
+h2 {
+  color: var(--text);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1%;
+  margin: 1%;
+  font-size: 210%;
+}
+
+@media (max-width: 800px) {
+  .navb {
+    font-size: 130%;
+  }
+}
+
+@media (max-width: 750px) {
+  .navb {
+    font-size: 110%;
+  }
+}
+
+@media (max-width: 630px) {
   .navb {
     transform: translateY(-800%);
     transition-duration: 0s;
     display: block;
-    background-color: var(--nbc);
+    background: var(--nbc);
     color: white;
-    padding: 3%;
+    padding: 8%;
+    width: 300%;
+    height: 500%;
     font-size: 120%;
-    z-index: -2;
   }
   .nav {
     transform: translateY(-25px);
     transform: translateX(-45px);
     background-color: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0);
     padding: 0px;
     margin: 0px;
-    z-index: -2;
+    position: fixed;
   }
   .mobilenav {
     transform: translateY(0px);
+  }
+  .text {
+    font-size: 110%;
   }
 }
