@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Vakky Studios | Home" />
+    <meta property="og:image" content="Images/icon.png" />
+    <meta property="og:description" content="input description here"/>
+    <title>Vakra Dev | Home</title>
+    <link rel="icon" href="Images/icon.png">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="mnav" id="button">
+      <button class="mobilenav" onclick="mobilenavopen()"><img height="32" width="32" src="Images/mbn.png"></button>
+    </div>
+    <div class="nav" id="nav">
+      <ul id="navlist">
+        <a class="navb" id="navb" href="#"><b>HOME</b></a>
+        <a class="navb" id="navb" href="#"><b>ABOUT</b></a>
+        <a class="navb" id="navb" href="#"><b>EXPERIENCE</b></a>
+        <a class="navb" id="navb" href="#"><b>CREATIONS</b></a>
+        <a class="navb" id="navb" href="#"><b>CONTACT</b></a>
+        <a class="navb" href="#"><button class="dmm"><img height="32" width="32" src="Images/search.png"></button></a>
+        <a class="navb" id="dmm"><button class="dmm" id="dm" onclick="dme()"><img height="32" width="32" src="Images/darkmode.png"></button></a>
+      </ul>
+    </div>
+    <br />
+    <br />
+    <br />
+    <h1>VAKRA DEV</h1>
+    <h2>HOME</h2>
+    <p id="text" class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, unde amet impedit commodi eveniet maxime animi. Mollitia doloribus quae, vitae voluptatem distinctio rerum enim earum obcaecati quos corporis vel dolorem! ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam non, ad iusto beatae illum obcaecati, recusandae dignissimos quaerat accusantium nam maiores voluptatem veniam aspernatur, magnam ea? Eaque cum natus laudantium.</p>
+    <br />
+    <br />
+    <p id="text" class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis magnam animi alias? A, maxime! Pariatur suscipit voluptate deleniti, eum praesentium corrupti sint deserunt optio recusandae odio culpa voluptatem fuga.<br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus enim in, nihil cupiditate ut architecto laborum ratione molestias provident obcaecati similique quidem adipisci quaerat ipsam accusamus ipsum excepturi dolores temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sunt cumque iste quas, facere quia aperiam dolorem, optio ullam perspiciatis rerum laudantium. Impedit corporis distinctio voluptas eos quam aliquam earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque amet quia quibusdam tempora temporibus vel laboriosam, quae illo enim id provident autem deserunt esse minus magnam, ipsam quidem minima reprehenderit.</p>
+    <br />
+  </body>
+  <script>
+    const darkmode = localStorage.getItem("darkmode");
+    if (localStorage.getItem('darkmode') == 'true') {
+      dme();
+    }
+    var navopen = false;
+    function mobilenavopen() {
+      const button = document.getElementById("button")
+      button.innerHTML = '<button class="mobilenav" onclick="mobilenavclose()"><img height="32" width="32" src="Images/mbn.png"></button>';
+      const ul = document.getElementById("navlist");
+      const li = ul.getElementsByTagName("a");
+      for (A = 0; A < 7; A++) {
+        li[A].style.visibility = "visible";
+        li[A].style.transitionDuration = "0.2s";
+        li[A].style.transform = "translateY(-16px)";
+      }
+      const nav = document.getElementById("nav");
+      nav.style.visibility = "visible";
+    }
+    function mobilenavclose() {
+      const button = document.getElementById("button")
+      button.innerHTML = '<button class="mobilenav" onclick="mobilenavopen()"><img height="32" width="32" src="Images/mbn.png"></button>';
+      const ul = document.getElementById("navlist");
+      const li = ul.getElementsByTagName("a");
+      for (A = 0; A < 7; A++) {
+        li[A].style.visibility = "visible";
+        li[A].style.transitionDuration = "0.2s";
+        li[A].style.transform = "translateY(-800%)";
+      }
+      const nav = document.getElementById("nav");
+      nav.style.visibility = "visible";
+    }
+
+    function dme() {
+      localStorage.setItem('darkmode', 'true')
+      var root = document.querySelector(":root")
+      root.style.setProperty('--nbc', 'linear-gradient(rgb(144, 0, 0), rgb(93, 0, 0))')
+      root.style.setProperty('--bg', 'rgb(15, 15, 15)')
+      root.style.setProperty('--text', 'white')
+      const dm = document.getElementById('dmm')
+      dm.innerHTML = '<button class="dmm" id="dm" onclick="dmd()"><img height="32" width="32" src="Images/darkmode.png"></button>'
+    }
+    function dmd() {
+      localStorage.setItem('darkmode', 'false')
+      var root = document.querySelector(":root")
+      root.style.setProperty('--nbc', 'linear-gradient(red, rgb(201, 0, 0))')
+      root.style.setProperty('--bg', 'white')
+      root.style.setProperty('--text', 'black')
+      const dm = document.getElementById('dmm')
+      dm.innerHTML = '<button class="dmm" id="dm" onclick="dme()"><img height="32" width="32" src="Images/darkmode.png"></button>'
+    }
+  </script>
+</html>
