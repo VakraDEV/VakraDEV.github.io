@@ -21,6 +21,8 @@ body {
   background: var(--nbc);
   text-align: left;
   transform: translateY(-70%);
+  position: fixed;
+  width: 100%;
 }
 
 .navb {
@@ -53,7 +55,7 @@ li {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1%;
   margin: 1%;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .mnav {
@@ -61,6 +63,7 @@ li {
   padding: 0.5%;
   margin: 0px;
   background: var(--nbc);
+  width: 100%;
   z-index: 1;
 }
 
@@ -141,11 +144,16 @@ h2 {
     padding: 0px;
     margin: 0px;
     position: fixed;
+    width: 40%;
   }
   .mobilenav {
     transform: translateY(0px);
   }
+  .mnav {
+    transform: translateY(-4px);
+    position: fixed;
+  }
   .text {
-    font-size: 110%;
+    font-size: 100%;
   }
 }
